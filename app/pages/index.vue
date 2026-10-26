@@ -167,7 +167,7 @@ useSeoMeta({
       <div class="max-w-[1200px] mx-auto px-4 sm:px-8 h-15 flex items-center gap-8">
         <!-- Logo -->
         <div
-          class="text-[1.1rem] font-semibold shrink-0 bg-gradient-to-r from-[#bd34fe] to-[#41d1ff] bg-clip-text text-transparent [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]"
+          class="text-[1.1rem] font-semibold shrink-0 bg-gradient-to-r from-[#0f766e] to-[#5eead4] bg-clip-text text-transparent [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]"
         >
           {{ APP_NAME }}
         </div>
@@ -226,15 +226,15 @@ useSeoMeta({
         <div class="absolute inset-0 pointer-events-none overflow-hidden">
           <div
             class="absolute top-[-10rem] left-1/2 -translate-x-[65%] w-[52rem] h-[52rem] rounded-full"
-            style="background: radial-gradient(circle, rgba(124, 58, 237, 0.13) 0%, transparent 65%)"
+            style="background: radial-gradient(circle, rgba(20, 184, 166, 0.13) 0%, transparent 65%)"
           ></div>
           <div
             class="absolute top-[-4rem] right-0 translate-x-[25%] w-[40rem] h-[40rem] rounded-full"
-            style="background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 65%)"
+            style="background: radial-gradient(circle, rgba(56, 189, 248, 0.09) 0%, transparent 65%)"
           ></div>
           <div
             class="absolute bottom-[-6rem] left-0 -translate-x-[20%] w-[32rem] h-[32rem] rounded-full"
-            style="background: radial-gradient(circle, rgba(16, 185, 129, 0.07) 0%, transparent 65%)"
+            style="background: radial-gradient(circle, rgba(224, 160, 92, 0.08) 0%, transparent 65%)"
           ></div>
         </div>
 
@@ -247,7 +247,7 @@ useSeoMeta({
               <a
                 :href="GITHUB"
                 target="_blank"
-                class="inline-flex items-center gap-2 text-[1rem] font-semibold text-[#7c3aed] no-underline px-3.5 py-1.5 rounded-full border border-[rgba(124,58,237,.3)] bg-[rgba(124,58,237,.06)] hover:bg-[rgba(124,58,237,.12)] transition-all duration-150 cursor-pointer"
+                class="inline-flex items-center gap-2 text-[1rem] font-semibold text-[#0d9488] no-underline px-3.5 py-1.5 rounded-full border border-[rgba(13,148,136,.3)] bg-[rgba(13,148,136,.06)] hover:bg-[rgba(13,148,136,.12)] transition-all duration-150 cursor-pointer"
               >
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" class="shrink-0">
                   <path
@@ -261,7 +261,7 @@ useSeoMeta({
             <!-- Title -->
             <h1 class="hero-title flex flex-col mt-0 mb-4 leading-[1.08]">
               <span
-                class="text-[clamp(3rem,8vw,5.5rem)] bg-gradient-to-r from-[#bd34fe] via-[#7c3aed] to-[#41d1ff] bg-clip-text text-transparent [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]"
+                class="text-[clamp(3rem,8vw,5.5rem)] bg-gradient-to-r from-[#0f766e] via-[#14b8a6] to-[#99f6e4] bg-clip-text text-transparent [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]"
               >
                 {{ APP_NAME }}
               </span>
@@ -286,7 +286,7 @@ useSeoMeta({
             <!-- Perks inline -->
             <div class="flex gap-4 sm:gap-6 justify-center lg:justify-start flex-wrap mb-7">
               <div class="flex items-center gap-1.5 text-[.85rem] text-[var(--hw-text-2)]">
-                <span class="w-1.5 h-1.5 rounded-full bg-[#7c3aed] shrink-0 opacity-80"></span>7
+                <span class="w-1.5 h-1.5 rounded-full bg-[#0d9488] shrink-0 opacity-80"></span>7
                 {{ $t('hero_perk_modes') }}
               </div>
               <div class="flex items-center gap-1.5 text-[.85rem] text-[var(--hw-text-2)]">
@@ -329,7 +329,7 @@ useSeoMeta({
               class="flex gap-3 justify-center lg:justify-start flex-col sm:flex-row items-stretch sm:items-center flex-wrap"
             >
               <button
-                class="inline-flex items-center justify-center gap-2 px-7 h-12 rounded-xl font-semibold text-[.97rem] text-white bg-gradient-to-r from-[#7c3aed] to-[#2563eb] border-none shadow-[0_4px_20px_rgba(124,58,237,.32)] cursor-pointer hover:-translate-y-0.5 hover:shadow-[0_6px_28px_rgba(124,58,237,.42)] transition-all duration-200 sm:w-auto"
+                class="inline-flex items-center justify-center gap-2 px-7 h-12 rounded-xl font-semibold text-[.97rem] text-white bg-gradient-to-r from-[#0d9488] to-[#0ea5e9] border-none shadow-[0_4px_20px_rgba(13,148,136,.32)] cursor-pointer hover:-translate-y-0.5 hover:shadow-[0_6px_28px_rgba(13,148,136,.42)] transition-all duration-200 sm:w-auto"
                 @click="navigateTo('/words')"
               >
                 <svg
@@ -347,7 +347,7 @@ useSeoMeta({
                 {{ $t('hero_cta_start') }}
               </button>
               <a
-                class="inline-flex items-center justify-center gap-2 px-7 h-12 rounded-xl font-semibold text-[.97rem] text-[var(--hw-text)] bg-transparent border border-solid border-[var(--hw-border)] no-underline hover:bg-[rgba(124,58,237,.06)] hover:border-[#7c3aed] hover:text-[#7c3aed] transition-all duration-200 sm:w-auto"
+                class="inline-flex items-center justify-center gap-2 px-7 h-12 rounded-xl font-semibold text-[.97rem] text-[var(--hw-text)] bg-transparent border border-solid border-[var(--hw-border)] no-underline hover:bg-[rgba(13,148,136,.06)] hover:border-[#0d9488] hover:text-[#0d9488] transition-all duration-200 sm:w-auto"
                 :href="GITHUB"
                 target="_blank"
               >
@@ -365,7 +365,7 @@ useSeoMeta({
               <a
                 :href="Origin"
                 target="_blank"
-                class="inline-flex items-center gap-1.5 text-[var(--hw-text-3)] no-underline hover:text-[#7c3aed] transition-colors duration-150"
+                class="inline-flex items-center gap-1.5 text-[var(--hw-text-3)] no-underline hover:text-[#0d9488] transition-colors duration-150"
               >
                 <svg
                   width="14"
@@ -428,7 +428,7 @@ useSeoMeta({
                 class="bg-[var(--hw-bg-card)] border-2 rounded-2xl shadow-[var(--hw-shadow-lg)] overflow-hidden outline-none transition-all duration-250"
                 :class="
                   demoFocused
-                    ? 'border-[#7c3aed] shadow-[0_0_0_4px_rgba(124,58,237,.14),var(--hw-shadow-lg)]'
+                    ? 'border-[#0d9488] shadow-[0_0_0_4px_rgba(13,148,136,.14),var(--hw-shadow-lg)]'
                     : 'border-[var(--hw-border)] demo-idle-border'
                 "
                 tabindex="0"
@@ -451,7 +451,7 @@ useSeoMeta({
                       :class="
                         demoFocused
                           ? 'bg-[rgba(16,185,129,.12)] text-[#059669]'
-                          : 'bg-[rgba(124,58,237,.08)] text-[#7c3aed]'
+                          : 'bg-[rgba(13,148,136,.08)] text-[#0d9488]'
                       "
                       >{{ demoFocused ? '● ' + $t('demo_typing_status') : '○ ' + $t('demo_click_to_activate') }}</span
                     >
@@ -484,7 +484,7 @@ useSeoMeta({
                       class="text-[.82rem] leading-[1.6] flex flex-col gap-0.5"
                     >
                       <div class="italic text-[var(--hw-text-2)]">
-                        <span class="text-[#7c3aed] font-bold not-italic mr-1">{{ ei + 1 }}.</span>{{ ex.en }}
+                        <span class="text-[#0d9488] font-bold not-italic mr-1">{{ ei + 1 }}.</span>{{ ex.en }}
                       </div>
                       <div class="text-[.78rem] text-[var(--hw-text-3)] not-italic pl-3.5">{{ ex.zh }}</div>
                     </div>
@@ -507,7 +507,7 @@ useSeoMeta({
                       v-for="(_, i) in demoWords"
                       :key="i"
                       class="w-1.5 h-1.5 rounded-full transition-colors duration-200"
-                      :class="i === demoIdx ? 'bg-[#7c3aed]' : 'bg-[var(--hw-border)]'"
+                      :class="i === demoIdx ? 'bg-[#0d9488]' : 'bg-[var(--hw-border)]'"
                     ></span>
                   </div>
                 </div>
@@ -536,10 +536,10 @@ useSeoMeta({
 <style scoped>
 /* CSS 变量主题令牌 */
 .hw {
-  --hw-bg: #f4f5f7;
-  --hw-bg-card: #ffffff;
-  --hw-bg-nav: rgba(244, 245, 247, 0.88);
-  --hw-border: #e2e4e8;
+  --hw-bg: #f2f5f3;
+  --hw-bg-card: #fdfffd;
+  --hw-bg-nav: rgba(242, 245, 243, 0.88);
+  --hw-border: #dfe7e2;
   --hw-text: #0d0d0d;
   --hw-text-2: #555e6e;
   --hw-text-3: #585d66;
@@ -571,9 +571,9 @@ useSeoMeta({
   @apply inline-flex items-center gap-1.5 text-[.78rem] font-bold tracking-[.03em] px-3.5 py-1.5 rounded-full border;
 }
 .value-pill--purple {
-  @apply border-[rgba(124,58,237,.35)] text-[#7c3aed] bg-[rgba(124,58,237,.07)];
+  @apply border-[rgba(13,148,136,.35)] text-[#0d9488] bg-[rgba(13,148,136,.07)];
 }
-.value-pill--blue {
+.value-pill--blue { /* sky */
   @apply border-[rgba(37,99,235,.35)] text-[#2563eb] bg-[rgba(37,99,235,.07)];
 }
 .value-pill--green {
@@ -613,7 +613,7 @@ useSeoMeta({
     border-color: var(--hw-border);
   }
   50% {
-    border-color: rgba(124, 58, 237, 0.45);
+    border-color: rgba(13, 148, 136, 0.45);
   }
 }
 
@@ -624,9 +624,9 @@ useSeoMeta({
   gap: 8px;
   font-size: 0.88rem;
   font-weight: 600;
-  color: #7c3aed;
-  background: rgba(124, 58, 237, 0.09);
-  border: 1.5px solid rgba(124, 58, 237, 0.35);
+  color: #0d9488;
+  background: rgba(13, 148, 136, 0.09);
+  border: 1.5px solid rgba(13, 148, 136, 0.35);
   border-radius: 999px;
   padding: 8px 18px;
   cursor: pointer;
@@ -637,15 +637,15 @@ useSeoMeta({
   0%,
   100% {
     transform: translateY(0) scale(1);
-    box-shadow: 0 0 0 0 rgba(124, 58, 237, 0);
+    box-shadow: 0 0 0 0 rgba(13, 148, 136, 0);
   }
   30% {
     transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.18);
+    box-shadow: 0 4px 16px rgba(13, 148, 136, 0.18);
   }
   60% {
     transform: translateY(0) scale(1);
-    box-shadow: 0 0 0 0 rgba(124, 58, 237, 0);
+    box-shadow: 0 0 0 0 rgba(13, 148, 136, 0);
   }
   80% {
     transform: translateY(-2px) scale(1.01);
@@ -657,7 +657,7 @@ useSeoMeta({
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(124, 58, 237, 0.6);
+  color: rgba(13, 148, 136, 0.6);
   margin-top: 6px;
   animation: arrow-bounce 1.4s ease-in-out infinite;
 }
@@ -675,6 +675,6 @@ useSeoMeta({
 
 /* 小程序码卡片 */
 .mini-qr-card {
-  @apply items-center gap-3 bg-[var(--hw-bg-card)] border border-[var(--hw-border)] rounded-xl px-4 py-3 shadow-[var(--hw-shadow-sm)] hover:border-[rgba(124,58,237,.4)] hover:shadow-[var(--hw-shadow-md)] transition-all duration-200;
+  @apply items-center gap-3 bg-[var(--hw-bg-card)] border border-[var(--hw-border)] rounded-xl px-4 py-3 shadow-[var(--hw-shadow-sm)] hover:border-[rgba(13,148,136,.4)] hover:shadow-[var(--hw-shadow-md)] transition-all duration-200;
 }
 </style>

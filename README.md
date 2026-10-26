@@ -2,6 +2,8 @@
   <img src="https://github.com/user-attachments/assets/9d626e0f-0601-4640-8981-ad66d8ac4853" alt="TypeWords" style="width: 500px;"/>
 </h1>
 
+> **关于本仓库**：这是 [zyronon/TypeWords](https://github.com/zyronon/TypeWords)（**GPL-3.0**，10k+ star）的 **UI 深度重构分支**——原项目的全部练习功能、词库与文章体系保持不变，我把视觉体系从「中性灰 + 品牌紫」整体迁移到「纸墨青 / 墨潭」双主题（暖纸底 + 青墨强调色），并参考 [qwerty-learner](https://github.com/RealKai42/qwerty-learner) 的设计理念打磨了首页视觉。改动明细见文末「本分支的改动」。遵循 GPL-3.0，所有修改开源；原项目版权归 [zyronon](https://github.com/zyronon) 所有，感谢其优秀的作品。
+
 <p align="center">
   <a href="/README.md">English</a> |
   <a href="/docs/README.es.md">Español</a> |
@@ -108,3 +110,12 @@ Of course, sponsorship is not required for use—sharing the project, submitting
 <img width="300" height="390" alt="practice words" src="/public/imgs/zhifubao.png" />
 <img width="300" height="390" alt="practice words" src="/public/imgs/weixin.png" />
 
+
+---
+
+## 本分支的改动（UI 深度重构）
+
+- **「纸墨青 / 墨潭」双主题**：`app/assets/css/main.scss` 全套设计令牌重定——亮色主题从纯灰白系迁移到暖纸青灰系（强调色 `#0d9488` 青、链接同步），暗色主题从中性灰迁移到深墨绿系；选中态、卡片激活态、滚动条、进度条等 30+ 变量逐项调校
+- **首页品牌视觉**：`app/pages/index.vue`——品牌渐变从紫青换成青墨→薄荷（`#0f766e → #14b8a6 → #99f6e4`），背景光斑、版本徽章、CTA 按钮、value pill、演示卡片激活态、暗色变体全部对齐新品牌色（全仓旧品牌紫清零）
+- **参考对齐**：界面信息层级参考 [qwerty-learner](https://github.com/RealKai42/qwerty-learner)（键盘驱动练习、音标+发音、章节默写的理念在原项目已具备，本分支聚焦视觉体系）
+- 练习功能、词库、文章、i18n、数据结构零改动；遵循原项目 GPL-3.0
