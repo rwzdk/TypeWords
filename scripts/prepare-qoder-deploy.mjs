@@ -11,7 +11,9 @@ import { join, relative } from 'node:path'
 
 const dist = process.argv[2] ?? '.output/public'
 
-const SNIPPET = `<script>(function(){var p=location.pathname;if(p==="/"||/\\.[a-z0-9]+$/i.test(p)||p.endsWith("/index.html"))return;var s=p+location.search+location.hash;if(!s.endsWith("/"))s+="/";s+="index.html";location.replace(s)})()</script>`
+// 平台把 /xxx 落到首页，所以要先跳到 /xxx/index.html 才能拿到正确 HTML；
+// 但 Nuxt 路由只认 /xxx，因此进入 index.html 后必须在应用启动前把地址还原成 /xxx。
+const SNIPPET = `<script>(function(){var p=location.pathname;if(/\\/index\\.html$/.test(p)){history.replaceState(null,"",p.slice(0,-11)+location.search+location.hash);return}if(p==="/"||/\\.[a-z0-9]+$/i.test(p))return;var s=p+location.search+location.hash;if(!s.endsWith("/"))s+="/";s+="index.html";location.replace(s)})()</script>`
 
 async function* walk(dir) {
   for (const entry of await readdir(dir, { withFileTypes: true })) {

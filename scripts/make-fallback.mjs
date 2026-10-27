@@ -9,7 +9,9 @@ const dist = process.argv[2] ?? '.output/public'
 
 const page = `<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
 <title>TypeWords</title><meta http-equiv="refresh" content="0;url=/">
-<script>(function(){var p=location.pathname;if(p==="/"||/\\.[a-z0-9]+$/i.test(p))return;
+<script>(function(){var p=location.pathname;
+if(/\\/index\\.html$/.test(p)){history.replaceState(null,"",p.slice(0,-11)+location.search+location.hash);return}
+if(p==="/"||/\\.[a-z0-9]+$/i.test(p))return;
 var t=p+location.search+location.hash;if(!t.endsWith("/"))t+="/";t+="index.html";
 var x=new XMLHttpRequest();x.open("HEAD",t,false);try{x.send()}catch(e){}
 location.replace(x.status>=200&&x.status<400?t:"/")})()</script></head>
