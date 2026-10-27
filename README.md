@@ -118,4 +118,5 @@ Of course, sponsorship is not required for use—sharing the project, submitting
 - **「纸墨青 / 墨潭」双主题**：`app/assets/css/main.scss` 全套设计令牌重定——亮色主题从纯灰白系迁移到暖纸青灰系（强调色 `#0d9488` 青、链接同步），暗色主题从中性灰迁移到深墨绿系；选中态、卡片激活态、滚动条、进度条等 30+ 变量逐项调校
 - **首页品牌视觉**：`app/pages/index.vue`——品牌渐变从紫青换成青墨→薄荷（`#0f766e → #14b8a6 → #99f6e4`），背景光斑、版本徽章、CTA 按钮、value pill、演示卡片激活态、暗色变体全部对齐新品牌色（全仓旧品牌紫清零）
 - **参考对齐**：界面信息层级参考 [qwerty-learner](https://github.com/RealKai42/qwerty-learner)（键盘驱动练习、音标+发音、章节默写的理念在原项目已具备，本分支聚焦视觉体系）
-- 练习功能、词库、文章、i18n、数据结构零改动；遵循原项目 GPL-3.0
+- **补全 CET-6 词库**：内置 `public/dicts/en/word/CET6_T.json`（2345 词，取自上游官方资源服务器的同源富化数据，含音标/例句/短语/词源），并把 `public/list/word.json`、`recommend_word.json` 本地化——静态部署时词库列表与数据不再依赖外部资源服务器
+- 练习功能、文章、i18n、数据结构零改动；词库仅补全 CET-6 数据与目录清单；遵循原项目 GPL-3.0
