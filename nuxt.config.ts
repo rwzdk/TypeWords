@@ -112,6 +112,7 @@ export default defineNuxtConfig({
       { code: 'tw', language: 'zh-TW', file: 'tw.json', name: '繁體中文' },
     ],
     defaultLocale: 'zh',
+    fallbackLocale: 'zh',
     // langDir:'app/i18n/',
     strategy: 'no_prefix',
   },

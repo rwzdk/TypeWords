@@ -1,8 +1,8 @@
 <script setup lang="ts">
 // 屏幕虚拟键盘：跟随当前单词的下一个字符高亮键位，敲错时闪红。
 // 自驱动设计——只依赖 word prop 与物理键盘事件流（eventBus），不侵入练习核心状态。
-import { ref, watch } from 'vue'
-import { useOnKeyboardEventListener } from '@/core/hooks/event.ts'
+import { ref, watch, onMounted, onUnmounted } from 'vue'
+import { emitter, EventKey } from '@/core/hooks/event.ts'
 import type { Word } from '@/core/types/types.ts'
 
 const props = defineProps<{ word: Word }>()
@@ -36,7 +36,7 @@ function flashWrong(k: string) {
   wrongTimer = setTimeout(() => (wrongKey.value = ''), 220)
 }
 
-function onKeyDown(e: KeyboardEvent) {
+function onTyping(e: KeyboardEvent) {
   const k = e.key
   if (k.length !== 1) return
   const expect = nextChar()
@@ -48,7 +48,9 @@ function onKeyDown(e: KeyboardEvent) {
   }
 }
 
-useOnKeyboardEventListener(onKeyDown, () => {})
+// 打字键统一走 eventBus 的 onTyping 通道（与 WordTypingCore 同源），物理 keydown 不含打字键
+onMounted(() => emitter.on(EventKey.onTyping, onTyping))
+onUnmounted(() => emitter.off(EventKey.onTyping, onTyping))
 </script>
 
 <template>
