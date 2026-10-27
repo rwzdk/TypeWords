@@ -14,6 +14,7 @@ import Panel from '@/components/Panel.vue'
 import { BaseIcon, Dialog, Toast, ToastComponent } from '@/base'
 import WordList from '@/components/list/WordList.vue'
 import TypeWord from '@/components/word/TypeWord.vue'
+import VirtualKeyboard from '@/components/word/VirtualKeyboard.vue'
 import Empty from '@/components/Empty.vue'
 import { useBaseStore } from '@/core/stores/base.ts'
 import { usePracticeStore } from '@/core/stores/practice.ts'
@@ -580,6 +581,7 @@ useEvents([
             @quickMark="isQuickMarkWordList = true"
             @toggle-simple="session.toggleWordSimpleForCurrent"
           />
+          <VirtualKeyboard :word="word" class="mt-6 hidden md:flex justify-center" />
         </div>
       </div>
     </template>

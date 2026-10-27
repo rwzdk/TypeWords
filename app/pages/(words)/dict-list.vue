@@ -13,12 +13,15 @@ import { getDefaultDict } from '@/core/types/func.ts'
 import { useFetch } from '@vueuse/core'
 import { DICT_LIST, LIB_JS_URL, TourConfig } from '@/core/config/env.ts'
 import { useSettingStore } from '@/core/stores/setting.ts'
+import { useI18n } from 'vue-i18n'
+import type { Dict } from '@/core/types/types.ts'
 
 const { nav } = useNav()
 const runtimeStore = useRuntimeStore()
 const settingStore = useSettingStore()
 const store = useBaseStore()
 const router = useRouter()
+const { t } = useI18n()
 
 function selectDict(e) {
   console.log(e.dict)
@@ -44,6 +47,28 @@ function groupByDictTags(dictList: DictResource[]) {
 }
 
 const { data: dict_list, isFetching } = useFetch(resourceWrap(DICT_LIST.WORD.ALL)).json()
+
+// 本机词库：系统特殊词库（错词/生词/已掌握）与用户自建词库，随词库档案本地持久化
+const LOCAL_DICT_NAME_KEYS: Record<string, string> = {
+  wordWrong: 'dict_name_wordWrong',
+  wordCollect: 'dict_name_wordCollect',
+  wordKnown: 'dict_name_wordKnown',
+}
+
+const localDicts = $computed(() => {
+  return store.word.bookList.filter(d => d.system || d.custom || d.words?.length)
+})
+
+function localDictName(d: Dict) {
+  const key = LOCAL_DICT_NAME_KEYS[d.enName ?? d.id]
+  return key ? t(key) : d.name
+}
+
+function goPractice(d: Dict) {
+  const idx = store.word.bookList.findIndex(v => v.id === d.id)
+  if (idx > -1) store.word.studyIndex = idx
+  router.push(`/words/practice-words/${d.id}`)
+}
 
 const groupedByCategoryAndTag = $computed(() => {
   let data = []
@@ -123,6 +148,23 @@ watch(dict_list, val => {
           <BaseIcon :title="$t('search')" @click="showSearchInput = true" class="z-1" icon="fluent:search-24-regular">
             <IconFluentSearch24Regular />
           </BaseIcon>
+        </div>
+      </div>
+      <div class="mt-4 mb-2" v-if="!searchKey && localDicts.length">
+        <div class="mb-2 font-semibold color-main">{{ $t('local_dicts_title') }}</div>
+        <div class="grid gap-2">
+          <div
+            v-for="d in localDicts"
+            :key="d.id"
+            class="flex items-center gap-3 rounded-xl border-item-solid p-3 bg-item cursor-pointer hover:bg-card-active transition-colors"
+            @click="goPractice(d)"
+          >
+            <div class="flex-1 min-w-0">
+              <div class="truncate color-main">{{ localDictName(d) }}</div>
+              <div class="text-xs color-translate-second">{{ $t('local_dicts_word_count', { n: d.words?.length ?? 0 }) }}</div>
+            </div>
+            <span class="text-xs color-link shrink-0">{{ $t('local_dicts_practice') }} →</span>
+          </div>
         </div>
       </div>
       <div class="mt-4" v-if="searchKey">
