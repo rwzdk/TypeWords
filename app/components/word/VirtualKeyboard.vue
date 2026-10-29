@@ -2,7 +2,7 @@
 // 屏幕虚拟键盘：跟随当前单词的下一个字符高亮键位，敲错时闪红。
 // 自驱动设计——只依赖 word prop 与物理键盘事件流（eventBus），不侵入练习核心状态。
 import { ref, watch, onMounted, onUnmounted } from 'vue'
-import { emitter, EventKey } from '@/core/hooks/event.ts'
+import { emitter, EventKey } from '@/core/utils/eventBus.ts'
 import type { Word } from '@/core/types/types.ts'
 
 const props = defineProps<{ word: Word }>()
