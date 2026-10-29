@@ -119,4 +119,5 @@ Of course, sponsorship is not required for use—sharing the project, submitting
 - **首页品牌视觉**：`app/pages/index.vue`——品牌渐变从紫青换成青墨→薄荷（`#0f766e → #14b8a6 → #99f6e4`），背景光斑、版本徽章、CTA 按钮、value pill、演示卡片激活态、暗色变体全部对齐新品牌色（全仓旧品牌紫清零）
 - **参考对齐**：界面信息层级参考 [qwerty-learner](https://github.com/RealKai42/qwerty-learner)（键盘驱动练习、音标+发音、章节默写的理念在原项目已具备，本分支聚焦视觉体系）
 - **补全 CET-6 词库**：内置 `public/dicts/en/word/CET6_T.json`（2345 词，取自上游官方资源服务器的同源富化数据，含音标/例句/短语/词源），并把 `public/list/word.json`、`recommend_word.json` 本地化——静态部署时词库列表与数据不再依赖外部资源服务器
-- 练习功能、文章、i18n、数据结构零改动；词库仅补全 CET-6 数据与目录清单；遵循原项目 GPL-3.0
+- **学习体验优化包**：① 词库列表页新增「本机词库」区块——错词本/生词本/已掌握一键直达练习（错词本由系统词库 wordWrong 自动收集，打错的词实时入本）；② 单词练习新增桌面端虚拟键盘（跟随下一字符高亮、敲错闪红，事件与打字核心同源）；③ 新增 /dashboard 学习仪表盘——连续打卡、近 90 天热力图、累计时长/词次/练习次数（数据全部来自本地练习档案）；④ **PWA**：可安装到桌面/手机，弱网与离线可继续练习（极简 SW：导航 network-first + 静态资产 SWR）
+- 练习核心流程、文章、i18n 结构、数据协议零破坏；新增文案覆盖 zh/en/tw，其余语言 fallbackLocale 回退；遵循原项目 GPL-3.0
